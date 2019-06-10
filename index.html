@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Times Search</title>
+  <link href='assets/css/reset.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href='assets/css/styles.css' rel='stylesheet' type='text/css'>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/poweredby_nytimes_200a.png" id="logo" alt="TNY logo">
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <section>
+      <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+          <div class="card-heading">
+            <h3 class="title">Search Parameters</h3>
+          </div>
+          <div class="card-body">
+            <form method="POST">
+              <div class="form-row">
+                <div class="value">
+                  <div class="input-group">
+                    <label>Search Term:</label>
+                    <input class="input--style-5" id="searchTerm" type="text" name="company">
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="value">
+                  <div class="input-group">
+                    <label>Numbers of Records to Retrieve:</label>
+                    <input class="input--style-5" id="numResults" type="text" name="company">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="form-row">
+                  <div class="value">
+                    <div class="input-group">
+                      <label>Start Year (Optional):</label>
+                      <input class="input--style-5" id="startYear" type="text" name="company">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="value">
+                    <div class="input-group">
+                      <label>End Year (Optional):</label>
+                      <input class="input--style-5" id="endYear" type="text" name="company">
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button id="search" class="btn btn--radius-2 btn--red" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Search</button>
+                  <button id="reset" class="btn btn--radius-2 btn--red" type="submit">Clear Results</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-5">
+        <div class="card-heading">
+          <h3 class="title"></span>Top Articles</h3>
+        </div>
+        <div class="card-body">
+          <div id="resultsDiv"></div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </main>
+
+  <!-- <script>window.jQuery || document.write('<script src="path/to/your/jquery_file.js"><\/script>')</script> -->
+  
+</body>
+
+<script src="assets/javascript/logic.js"></script>
+</html>
