@@ -30,18 +30,6 @@
     </div>
   </header>
 
-  <!-- <div class="card-body">
-              <form method="POST">
-                <div class="form-row">
-                  <div class="value">
-                    <div class="input-group">
-                      <label>Search Term:</label>
-                      <input class="input--style-5" id="searchTerm" type="text" name="company">
-                    </div>
-                  </div>
-                </div>
-   -->
-
   <main id="content-wrapper">
     <section id="search-form" class="section-card">
       <div class="card-heading">
@@ -55,30 +43,19 @@
           <fieldset>
             <div class="form-row">
               <label>Search Term:</label>
-              <input class="input-field" id="searchTerm" type="text">
-              <!-- <input class="input-field" id="searchTerm" type="text" onfocus="this.value=''" value="Enter search terms here..."> -->
+              <input class="input-field" id="searchTerm" type="text" onfocus="this.value=''" placeholder="Enter search terms here...">
             </div>
             <div class="form-row">
               <label>Numbers of Records to Retrieve:</label>
-              <!-- <select id="numResults" class="drop-down">
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="30">30</option>
-                  <option value="40">40</option>
-                  <option value="50">50</option>
-                </select> -->
-                <input class="input-field" id="numResults" type="text">
-                <!-- <input class="input-field" id="numResults" type="number" step="10" value="10" min="10"> -->
+                <input class="input-field" id="numResults" type="number" step="10" placeholder="10" min="10">
             </div>
             <div class="form-row">
               <label>Start Year:</label>
-              <input class="input-field" id="startYear" type="text">
-              <!-- <input class="input-field" id="startYear" type="text" onfocus="this.value=''" value="Optional, e.g. 2000"> -->
+              <input class="input-field" id="startYear" type="text" onfocus="this.value=''" placeholder="Optional, e.g. 2000">
             </div>
             <div class="form-row">
               <label>End Year:</label>
-              <input class="input-field" id="endYear" type="text">
-              <!-- <input class="input-field" id="endYear" type="text" onfocus="this.value=''" value="Optional, e.g. 2010"> -->
+              <input class="input-field" id="endYear" type="text" onfocus="this.value=''" placeholder="Optional, e.g. 2010">
             </div>
           </fieldset>
           <div id="buttons">
@@ -105,7 +82,9 @@
   </main>
 
   <footer>
-<p>Hello World!</p>
+<p id="footer-p" ><span style="font-size: 1em; color: #898989;">
+  <i class="far fa-hand-spock"></i>
+</span></i>made with love and <img src="assets/images/poweredby_nytimes_65a.png" alt="NYT API small logo"></p>
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

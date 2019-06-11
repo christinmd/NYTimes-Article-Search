@@ -11,20 +11,11 @@ function scrollFunction() {
 }
 
 // When the user clicks on the button, scroll to the top of the document
-// function topFunction() {
-//   document.body.scrollTop = 0;
-//   document.documentElement.scrollTop = 0;
-// }
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
-//==================================================
-//tried adding event handler for Enter press in any of the input fields, but the scope is wrong:
-// var input = document.getElementById("input-field");
-// input.addEventListener("keyup", function(event) {
-//   if (event.keyCode === 13) {
-//     event.preventDefault();
-//     document.getElementById("search").click();
-//   }
-// });
 //==================================================
 
 var searchTerm;
