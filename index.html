@@ -6,97 +6,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Times Search</title>
-  <link href='assets/css/reset.css' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href='assets/css/styles.css' rel='stylesheet' type='text/css'>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
+  <link href='assets/css/reset.css' rel='stylesheet'>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Spectral&display=swap" rel="stylesheet">
+  <link href='assets/css/styles.css' rel='stylesheet'>
 
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="images/poweredby_nytimes_200a.png" id="logo" alt="TNY logo">
+  <button onclick="topFunction()" id="topBtn" title="Go back to top">
+      <span style="font-size: 1.25em; color:#fff;">
+          <i class="fas fa-arrow-up"></i>
+        </span>
+  </button>
+
+  <header>
+    <div id="logo-wrapper">
+      <a id="logo" href="https://developer.nytimes.com/">
+        <img src="assets/images/poweredby_nytimes_200a.png" alt="Powered by NYTimes API logo">
       </a>
     </div>
-  </nav>
+  </header>
 
-  <main>
-    <section>
-      <div class="wrapper wrapper--w790">
-        <div class="card card-5">
-          <div class="card-heading">
-            <h3 class="title">Search Parameters</h3>
-          </div>
-          <div class="card-body">
-            <form method="POST">
-              <div class="form-row">
-                <div class="value">
-                  <div class="input-group">
-                    <label>Search Term:</label>
-                    <input class="input--style-5" id="searchTerm" type="text" name="company">
-                  </div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="value">
-                  <div class="input-group">
-                    <label>Numbers of Records to Retrieve:</label>
-                    <input class="input--style-5" id="numResults" type="text" name="company">
-                  </div>
-                </div>
-              </div>
-              <div>
+  <!-- <div class="card-body">
+              <form method="POST">
                 <div class="form-row">
                   <div class="value">
                     <div class="input-group">
-                      <label>Start Year (Optional):</label>
-                      <input class="input--style-5" id="startYear" type="text" name="company">
+                      <label>Search Term:</label>
+                      <input class="input--style-5" id="searchTerm" type="text" name="company">
                     </div>
                   </div>
                 </div>
-                <div class="form-row">
-                  <div class="value">
-                    <div class="input-group">
-                      <label>End Year (Optional):</label>
-                      <input class="input--style-5" id="endYear" type="text" name="company">
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <button id="search" class="btn btn--radius-2 btn--red" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Search</button>
-                  <button id="reset" class="btn btn--radius-2 btn--red" type="submit">Clear Results</button>
-                </div>
-            </form>
-          </div>
-        </div>
+   -->
+
+  <main id="content-wrapper">
+    <section id="search-form" class="section-card">
+      <div class="card-heading">
+          <h3 class="card-title">
+          <span style="font-size: 1.25em; color:#fff;">
+            <i class="far fa-newspaper"></i>
+          </span>Article Search</h3>
       </div>
-
-      <div class="card card-5">
-        <div class="card-heading">
-          <h3 class="title"></span>Top Articles</h3>
-        </div>
-        <div class="card-body">
-          <div id="resultsDiv"></div>
-        </div>
+      <div class="card-body">
+        <form method="POST">
+          <fieldset>
+            <div class="form-row">
+              <label>Search Term:</label>
+              <input class="input-field" id="searchTerm" type="text">
+              <!-- <input class="input-field" id="searchTerm" type="text" onfocus="this.value=''" value="Enter search terms here..."> -->
+            </div>
+            <div class="form-row">
+              <label>Numbers of Records to Retrieve:</label>
+              <!-- <select id="numResults" class="drop-down">
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="40">40</option>
+                  <option value="50">50</option>
+                </select> -->
+                <input class="input-field" id="numResults" type="text">
+                <!-- <input class="input-field" id="numResults" type="number" step="10" value="10" min="10"> -->
+            </div>
+            <div class="form-row">
+              <label>Start Year:</label>
+              <input class="input-field" id="startYear" type="text">
+              <!-- <input class="input-field" id="startYear" type="text" onfocus="this.value=''" value="Optional, e.g. 2000"> -->
+            </div>
+            <div class="form-row">
+              <label>End Year:</label>
+              <input class="input-field" id="endYear" type="text">
+              <!-- <input class="input-field" id="endYear" type="text" onfocus="this.value=''" value="Optional, e.g. 2010"> -->
+            </div>
+          </fieldset>
+          <div id="buttons">
+            <button id="search" class="button" type="submit">
+              <span style="font-size: 1em; color:#fff; opacity: 0.9;">
+                  <i class="fas fa-search"></i>
+              </span>Search</button>
+            <button id="reset" class="button" type="reset">Reset</button>
+          </div>
+        </form>
       </div>
     </section>
-
-
-
-
+    <section id="search-results" class="section-card">
+      <div class="card-heading">
+        <h3 class="card-title">
+          <span style="font-size: 1.25em; color:#fff;">
+            <i class="far fa-list-alt"></i>
+          </span>Top Articles</h3>
+      </div>
+      <div class="card-body">
+        <div id="resultsDiv"></div>
+      </div>
+    </section>
   </main>
 
-  <!-- <script>window.jQuery || document.write('<script src="path/to/your/jquery_file.js"><\/script>')</script> -->
-  
+  <footer>
+<p>Hello World!</p>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/2e1826f24a.js"></script>
+  <script src="assets/javascript/logic.js"></script>
+
 </body>
 
-<script src="assets/javascript/logic.js"></script>
 </html>
